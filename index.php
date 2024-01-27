@@ -3,12 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>cambiada</title>
+	<title>Login Page</title>
 
 	
 	<link rel="stylesheet" href="librerias/bootstrap.min.css">
 	<link rel="stylesheet" href="fontawesome.all.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+
+
+
+	<style>
+		body {
+    background-image: url('img/img.jpg'); /* Ruta a tu imagen de fondo */
+	    background-position: center; /* Centra la imagen en la pantalla */
+	    background-repeat: no-repeat; /* Evita que la imagen se repita */
+	    margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
+	    padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+	    font-family: Arial, sans-serif; /* Elige una fuente para el contenido */
+	  
+			}
+	</style>
 </head>
 <body>
 	<div class="container">

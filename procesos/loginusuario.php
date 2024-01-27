@@ -28,16 +28,16 @@ try{
 
 	$numero_registro=$resultado->rowCount();
 
-	if ($numero_registro !=0 ) {
+	if ($numero_registro !=0 ) {  //iniciar la secion 
 
-		session_start();
+		session_start(); // incia la secion
 
 		$_SESSION['usuario']=$_POST['usuario'];
 
 		header("Location:../vistas/home.php");
 
 	}else{
-		header("Location:../index.php");
+		header("Location:../index.php"); //si no permanece en esta ruta
 
 	}
 

@@ -1,3 +1,19 @@
+	<?php
+// Iniciar la sesión si no está iniciada
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Verificar si la sesión está iniciada
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario'];
+} else {
+    header("Location: ../index.php");
+    die();
+}
+?>
+
+
 	<!DOCTYPE html>
 	<html lang="en">
 	<head>
@@ -21,13 +37,15 @@
 				<div class="col-md-6">
 					<!-- Contenido de la primera columna -->
 					<div class="bg-white text-dark p-3 border border-danger">
-						<h2 class="text-center">INTEGRANTES</h2>
+						<h2 class="text-center">USUARIO ACTIVO</h2>
 						<ul class="">
 							<ol class="mt-2">
-								<li><a href="peritos/brayan.php">Brayan Izaguirre</a></li>
-								<li><a href="peritos/enrique.php">Enrique Gonzalez</a></li>
-								<li><a href="peritos/corea.php">Adali Corea</a></li>
-								<li><a href="peritos/tony.php">Tony Alonzo</a></li>
+								
+								<li><a href="peritos/opsiones_peritos.php">
+									<?php 
+									echo $usuario;
+									 ?>
+								</a></li>
 							</ol>
 						</ul>
 

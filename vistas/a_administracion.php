@@ -1,3 +1,17 @@
+	<?php
+// Iniciar la sesión si no está iniciada
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Verificar si la sesión está iniciada
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario'];
+} else {
+    header("Location: ../indesx.php");
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +22,16 @@
 	<title>administracion</title>
 </head>
 <body>
-	<?php include "menu.php";?>	
+
+	<?php 
+	include "menu.php";?>	
 
 	<h1>AREA DE ADMINISTRACION</h1>
 
-	<h2>INTEGRANTES</h2>
+	<h2>USUARIO ACTIVO</h2>
 	<ol>
-		<li><a href="administracion/medina.php">Selvin Medina</a></li>
-		<li><a href="administracion/evelyn.php">Evelyn Cagnada</a></li>
+		<li><a href="administracion/opsiones_administradores.php"><?php echo $usuario;?></a></li>
+		
 
 	</ol>
 	

@@ -1,3 +1,17 @@
+  <?php
+// Iniciar la sesión si no está iniciada
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Verificar si la sesión está iniciada
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario'];
+} else {
+    header("Location: ../../index.php");
+    die();
+}
+?>
 <?php include "menu_administracion.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,10 +21,10 @@
 	<link rel="stylesheet" type="text/css" href="../../librerias/bootstrap.min.css">
     <link rel="stylesheet" href="../../librerias/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../../css/menu.css">
-	<title>medina</title>
+	<title>opsions_administradores</title>
 </head>
 <body>
-	<h1>area de selvin</h1>
-	
+
+	<p>configurar lo que haaran los administradores</p>
 </body>
 </html>

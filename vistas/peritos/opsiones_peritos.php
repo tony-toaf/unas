@@ -1,4 +1,17 @@
+  <?php
+// Iniciar la sesión si no está iniciada
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
+// Verificar si la sesión está iniciada
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario'];
+} else {
+    header("Location: ../../index.php");
+    die();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,11 +22,13 @@
   <link rel="stylesheet" href="../../librerias/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../../css/menu.css">
 
-  <title>tony</title>
+  <title>opsiones_peritos</title>
 </head>
 <body>
 	<?php include "menu_peritos.php"; ?>
-	<h2 class="text-center border border-danger col-sm-12">Tony</h2>
+	<h2 class="text-center border border-danger col-sm-12">
+    <?php echo $usuario;?>
+  </h2>
 
   <table class="table col-sm-12">
     <thead>

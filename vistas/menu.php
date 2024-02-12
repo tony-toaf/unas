@@ -1,3 +1,20 @@
+<?php
+// Iniciar la sesión si no está iniciada
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+
+// Verificar si la sesión está iniciada
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario'];
+} else {
+    header("Location: ../index.php");
+    die();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,16 +27,8 @@
 
 </head>
 <body>
-  <?php 
-  session_start();
-
-  if (!isset($_SESSION['usuario'])) {
-    header("Location:../index.php");  //verifica si esta iniciada la secion
-
-  }
 
 
-   ?>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <ul class="navbar-nav">

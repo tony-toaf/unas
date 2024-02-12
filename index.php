@@ -37,7 +37,7 @@
 					</div>
 				</div>
 				<div class="card-body">
-					<form  action="procesos/loginusuario.php" method="post">
+					<form  action="procesos/login/conexion.php" method="post">
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>

@@ -17,30 +17,23 @@ if (isset($_SESSION['id_usuario'])) {
         $resultado->execute();
 
         $row = $resultado->fetch(PDO::FETCH_ASSOC);
-
-        if ($row) {
-            $rol = $row['RolID'];
+         $rol = $row['RolID'];
+        if ($row!=false) {
 
             if ($rol == 1) {
-
-               
-                //usuario administrador
-                //echo "usuario que inicio secion ". $nombre_usuario;
-                echo "usuario administrador";
-
-            } elseif ($rol == 2) {
                 //usuario perito
                 header("Location: ../../vistas/a_peritos.php");
+                
 
-            }elseif($rol == 3){
+            }elseif ($rol == 2) {
                 //usuario investigador
-                header("Location: Location: ../../vistas/a_investigacion.php");
+                header("Location: ../../vistas/a_investigacion.php");  
 
-            }elseif($rol == 4){
-                //admistrativo  
-               header("Location: ../../vistas/a_administracion.php");
-
-            }else {
+            }elseif ($rol == 3) {
+                //rol adminitrativo
+                header("Location: ../../vistas/a_administracion.php");
+            }
+            else {
                 echo "Rol desconocido.";
             }
         } else {

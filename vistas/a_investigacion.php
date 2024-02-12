@@ -3,15 +3,10 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == 2) { //verificar el permiso
 
-// Verificar si la sesión está iniciada
-if (isset($_SESSION['usuario'])) {
-    $usuario = $_SESSION['usuario'];
-} else {
-    header("Location: ../index.php");
-    die();
-}
-?>
+   
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,3 +27,11 @@ if (isset($_SESSION['usuario'])) {
 	</ol>
 </body>
 </html>
+<?php
+} else {
+    // Si no cumple con los requisitos, redirigir a otra página
+    header("Location: ../procesos/funciones/sin_permisos.php");
+   
+    
+}
+?>

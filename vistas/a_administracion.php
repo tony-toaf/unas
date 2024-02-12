@@ -1,17 +1,12 @@
-	<?php
+<?php
 // Iniciar la sesión si no está iniciada
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == 3) { //verificar el permiso
 
-// Verificar si la sesión está iniciada
-if (isset($_SESSION['usuario'])) {
-    $usuario = $_SESSION['usuario'];
-} else {
-    header("Location: ../indesx.php");
-    die();
-}
-?>
+   
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,3 +32,11 @@ if (isset($_SESSION['usuario'])) {
 	
 </body>
 </html>
+<?php
+} else {
+    // Si no cumple con los requisitos, redirigir a otra página
+    header("Location: ../procesos/funciones/sin_permisos.php");
+    
+    
+}
+?>

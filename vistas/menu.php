@@ -41,7 +41,7 @@ if (isset($_SESSION['usuario'])) {
       </a>
       <ul class="dropdown-menu desplegable dropdown-menu-left" aria-labelledby="navbarDropdown">
         <li><a class="dropdown-item" href="home.php">Home</a></li>
-        <li><a class="dropdown-item" href="a_administracion.php">Are Administracion</a></li>
+        <li><a class="dropdown-item" href="a_administracion.php">Area de Administracion</a></li>
         <li><a class="dropdown-item" href="a_investigacion.php">Area de Investigacion</a></li>
         <li><a class="dropdown-item" href="a_peritos.php">Area de Peritos</a></li>
       </ul>
@@ -51,14 +51,15 @@ if (isset($_SESSION['usuario'])) {
   <!-- INICIO DEL ICONO CASA -->
   <ul class="navbar-nav">
     <li class="nav-item dropdown">
-
-      <a class="btn btn-danger" href="../index.php">SALIR</a>
+        
+        <a class="btn btn-danger" href="../procesos/funciones/salir.php">
+         SALIR</a>
+         
+      
       
     </li>
   </ul>
 </nav>
-
-
 </body>
 </html>
     <!-- pendientes las librearias -->

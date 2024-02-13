@@ -1,5 +1,15 @@
 <?php 
-	echo "Sin permisos para entrar en esta area";
+session_start();
+
+if (session_status() != PHP_SESSION_NONE) {
+    echo "No tienes permisos";
+
+}
+
 
 
  ?>
+
+
+
+

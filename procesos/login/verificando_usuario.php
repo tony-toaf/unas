@@ -32,6 +32,8 @@ if (isset($_SESSION['id_usuario'])) {
             }elseif ($rol == 3) {
                 //rol adminitrativo
                 header("Location: ../../vistas/a_administracion.php");
+            }elseif ($rol == 4 ) {
+                header("Location: ../../vistas/home.php");
             }
             else {
                 echo "Rol desconocido.";

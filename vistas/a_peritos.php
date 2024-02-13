@@ -3,12 +3,9 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == 1) { //verificar el permiso
-
-   
+if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == 1 || $_SESSION['id_rol'] ==4) { //verificar el permiso
     ?>
-
-	<!DOCTYPE html>
+	<!DOCTYPE <html></html>
 	<html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -24,8 +21,6 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_r
 	</head>
 	<body>
 		<?php include "menu.php";?>	
-
-
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
@@ -34,12 +29,9 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_r
 						<h2 class="text-center">USUARIO ACTIVO</h2>
 						<ul class="">
 							<ol class="mt-2">
-								
+
 								<li><a href="peritos/opsiones_peritos.php">
-									<?php 
-									echo $usuario;
-								
-									 ?>
+									<?php echo $usuario;?>
 								</a></li>
 							</ol>
 						</ul>
@@ -88,6 +80,7 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_r
 } else {
     // Si no cumple con los requisitos, redirigir a otra página
     header("Location: ../procesos/funciones/sin_permisos.php");
+    //echo "sin permisos";
    
 }
 ?>

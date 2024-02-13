@@ -1,15 +1,16 @@
-  <?php
+
+<?php
 // Iniciar la sesión si no está iniciada
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
+    $usuario = $_SESSION['usuario'];
 }
 
-// Verificar si la sesión está iniciada
-if (isset($_SESSION['usuario'])) {
-    $usuario = $_SESSION['usuario'];
-} else {
+// Verificar si la sesión está activa
+if (!isset($_SESSION['usuario'])) {
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
     header("Location: ../../index.php");
-    die();
+    exit();
 }
 ?>
 
@@ -25,21 +26,27 @@ if (isset($_SESSION['usuario'])) {
   <title>opsiones_peritos</title>
 </head>
 <body>
-	<?php include "menu_peritos.php"; ?>
+	<?php //include "menu_peritos.php"; ?>
 	<h2 class="text-center border border-danger col-sm-12">
-    <?php echo $usuario;?>
+  <?php echo "usuario: ". $usuario;?>
   </h2>
 
   <table class="table col-sm-12">
     <thead>
       <tr>
-        <th><a href="" class="btn btn-outline-primary">VER MIS ARCHIVOS</a></th>
-        <th><a href="../resources/subir_archivos.php" class="btn btn-outline-primary">SUBIR ARCHIVOS</a></th>
-        <th><a href="../resources/add_numero.php" class="btn btn-outline-secondary">AÑADIR NUMERO</a></th> <br>
+        <th><a href="../../procesos/procesos_peritos/ver_archivos/ver_archivos.php" class="btn btn-outline-primary">VER MIS ARCHIVOS</a></th>
+
+        <th><a href="../../procesos/procesos_peritos/subir_archivos/subir_archivos.php" class="btn btn-outline-primary">SUBIR ARCHIVOS</a></th>
+
+        <th><a href="../../procesos/procesos_peritos/add_numero.php" class="btn btn-outline-secondary">AÑADIR NUMERO</a></th> <br>
       </tr>
+
       <tr>
-        <th><a href="../resources/eliminar_numero.php" class="btn btn-outline-danger">ELIMINAR NUMERO</a></th>
-        <th><a href="" class="btn btn-outline-success">DATOS PERSONALES</a></th>
+        <th><a href="../../procesos/procesos_peritos/eliminar_numero.php" class="btn btn-outline-danger">ELIMINAR NUMERO</a></th>
+      
+        <th><a href="../../procesos/procesos_peritos/add_caso/add_caso.php" class="btn btn-outline-secondary">AÑADIR CASO</a></th>
+      
+        <th><a href="../../procesos/procesos_peritos/datos_personales/datos_personales.php" class="btn btn-outline-success">DATOS PERSONALES</a></th>
       </tr>
 
     </thead>

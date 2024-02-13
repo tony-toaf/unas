@@ -3,9 +3,7 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == 3) { //verificar el permiso
-
-   
+if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == 3 || $_SESSION['id_rol'] == 4) { //verificar el permiso
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +15,6 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_r
 	<title>administracion</title>
 </head>
 <body>
-
 	<?php 
 	include "menu.php";?>	
 
@@ -36,6 +33,7 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_r
 } else {
     // Si no cumple con los requisitos, redirigir a otra página
     header("Location: ../procesos/funciones/sin_permisos.php");
+
     
     
 }

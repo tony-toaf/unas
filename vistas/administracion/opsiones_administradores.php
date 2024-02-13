@@ -1,18 +1,19 @@
-  <?php
+
+<?php
 // Iniciar la sesión si no está iniciada
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Verificar si la sesión está iniciada
-if (isset($_SESSION['usuario'])) {
-    $usuario = $_SESSION['usuario'];
-} else {
+// Verificar si la sesión está activa
+if (!isset($_SESSION['usuario'])) {
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
     header("Location: ../../index.php");
-    die();
+    exit();
 }
 ?>
-<?php include "menu_administracion.php"; ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

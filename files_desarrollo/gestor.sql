@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 13-02-2024 a las 04:00:11
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Host: 127.0.0.1
+-- Generation Time: Mar 07, 2024 at 06:49 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `casos`
+-- Database: `gestor`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `caso`
+-- Table structure for table `caso`
 --
 
 CREATE TABLE `caso` (
@@ -37,7 +37,7 @@ CREATE TABLE `caso` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `dato`
+-- Table structure for table `dato`
 --
 
 CREATE TABLE `dato` (
@@ -47,6 +47,7 @@ CREATE TABLE `dato` (
   `Fecha_solicitado` varchar(50) DEFAULT NULL,
   `Informe_de_solicitud` varchar(50) DEFAULT NULL,
   `Propietario` varchar(50) DEFAULT NULL,
+  `Identidad` varchar(50) DEFAULT NULL,
   `Observacion` varchar(500) DEFAULT NULL,
   `TipoDato` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -54,7 +55,7 @@ CREATE TABLE `dato` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `roles`
+-- Table structure for table `roles`
 --
 
 CREATE TABLE `roles` (
@@ -63,7 +64,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `roles`
+-- Dumping data for table `roles`
 --
 
 INSERT INTO `roles` (`ID`, `nombre`) VALUES
@@ -75,7 +76,7 @@ INSERT INTO `roles` (`ID`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tipo_de_datos`
+-- Table structure for table `tipo_de_datos`
 --
 
 CREATE TABLE `tipo_de_datos` (
@@ -83,10 +84,23 @@ CREATE TABLE `tipo_de_datos` (
   `Nombre` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tipo_de_datos`
+--
+
+INSERT INTO `tipo_de_datos` (`ID`, `Nombre`) VALUES
+(1, 'Llamadas'),
+(2, 'Mensajes'),
+(3, 'Imei'),
+(4, 'CDR_llamadas'),
+(5, 'CDR_mensajes'),
+(6, 'Sinopsis'),
+(7, 'Audios');
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -97,7 +111,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`ID`, `Nombre`, `Contraseña`, `RolID`) VALUES
@@ -107,18 +121,18 @@ INSERT INTO `usuarios` (`ID`, `Nombre`, `Contraseña`, `RolID`) VALUES
 (4, 'superuser', 'superuser', 4);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `caso`
+-- Indexes for table `caso`
 --
 ALTER TABLE `caso`
   ADD PRIMARY KEY (`Expediente`),
   ADD KEY `UsuarioID` (`UsuarioID`);
 
 --
--- Indices de la tabla `dato`
+-- Indexes for table `dato`
 --
 ALTER TABLE `dato`
   ADD PRIMARY KEY (`ID`),
@@ -126,43 +140,43 @@ ALTER TABLE `dato`
   ADD KEY `Expediente` (`Expediente`);
 
 --
--- Indices de la tabla `roles`
+-- Indexes for table `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indices de la tabla `tipo_de_datos`
+-- Indexes for table `tipo_de_datos`
 --
 ALTER TABLE `tipo_de_datos`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `RolID` (`RolID`);
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `caso`
+-- Constraints for table `caso`
 --
 ALTER TABLE `caso`
   ADD CONSTRAINT `caso_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `usuarios` (`ID`);
 
 --
--- Filtros para la tabla `dato`
+-- Constraints for table `dato`
 --
 ALTER TABLE `dato`
   ADD CONSTRAINT `dato_ibfk_1` FOREIGN KEY (`TipoDato`) REFERENCES `tipo_de_datos` (`ID`),
   ADD CONSTRAINT `dato_ibfk_2` FOREIGN KEY (`Expediente`) REFERENCES `caso` (`Expediente`);
 
 --
--- Filtros para la tabla `usuarios`
+-- Constraints for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`RolID`) REFERENCES `roles` (`ID`);

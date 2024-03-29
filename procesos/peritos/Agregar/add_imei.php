@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>añadir numero</title>
+  <title>añadir imei</title>
   <!-- agnadiendo el bootstrap -->
   <link rel="stylesheet" href="librerias/bootstrap.min.css"> 
   
@@ -21,7 +21,7 @@
     <fieldset>
 
       <!-- Form Name -->
-      <legend style="text-align: center;">AÑADIR NUEVO NUMERO</legend>
+      <legend style="text-align: center;">AÑADIR IMEI</legend>
 
       <!-- Text input-->
       <div class="form-group">

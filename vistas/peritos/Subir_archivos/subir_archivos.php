@@ -12,8 +12,7 @@
 
 	<div class="col-md-12 m-4">
 		<!-- columna de subir archivos -->
-		<form action="subirfile.php" method="post"> 
-
+		<form action="  " method="post"> 
 			<div class="bg-secondary text-white p-3">
 				<h2 class="text-center">SUBIR ARCHIVOS</h2>
 				<p class="text-center">Seleccione los archivos a subir</p>
@@ -24,7 +23,6 @@
 
 					<div class="input-group-append">
 						<input class="btn btn-danger" value="Subir" type="submit" name="buscar">		
-						<!-- este boton debe buscarn el la base de datos le numero -->
 					</div>
 				</div>
 

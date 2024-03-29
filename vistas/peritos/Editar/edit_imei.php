@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eliminar Numero</title>
+  <title>Editar Expediente</title>
   <!-- agnadiendo el bootstrap -->
   <link rel="stylesheet" href="librerias/bootstrap.min.css"> 
   
@@ -20,30 +20,37 @@
   <form  action="../../procesos/peritos/aliminar_numero.php" class="form-horizontal" method="post">
     <fieldset>
       <!-- Form Name -->
-      <legend style="text-align: center;">ELIMINAR NUMERO</legend>
+      <legend style="text-align: center;">EDITAR NUMERO DE  IMEI</legend>
 
       <!-- Text input-->
       <div class="form-group">
-        <label class="col-md-4 control-label">Numero sin guiones:</label>  
+        <label class="col-md-4 control-label">IMEI a Editar:</label>  
         <div class="col-md-4">
-          <input id="USERNAME" name="numero" type="text" placeholder="a eliminar" class="form-control input-md" required="">
+          <input id="USERNAME" name="numero" type="text" placeholder="numero de imei" class="form-control input-md" required="">
         </div>
       </div>
 
-      <!-- Text input-->
       <div class="form-group">
-        <label class="col-md-4 control-label">No Expediente</label>  
+        <label class="col-md-4 control-label">Nuevo IMEI:</label>  
         <div class="col-md-4">
-          <input id="ADDPASSWORD" name="expediente" type="text" placeholder="ejem: 123-2023" class="form-control input-md" required="">
-
+          <input id="USERNAME" name="numero" type="text" placeholder="Introduce El Nuevo  IMEI" class="form-control input-md" required="">
         </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Expediente:</label>  
+        <div class="col-md-4">
+          <input id="USERNAME" name="numero" type="text" placeholder="ejem 1234-2024" class="form-control input-md" required="">
+        </div>
+      </div>
+
       </div>
       <!-- accion de los botones -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="button1id"></label>
         <div class="col-md-3">
-          <input type="submit" name="eliminar" class="btn btn-danger" value="ELIMINAR">
-          <a href="../a_peritos.php" type="submit" name="cancelar" class="btn btn-primary ">Cancelar</a>
+          <input type="submit" name="eliminar" class="btn btn-danger" value="ESTABLECER">
+          <a href="../opsiones_peritos.php" type="submit" name="cancelar" class="btn btn-primary ">Cancelar</a>
         </div>
       </div>
     </fieldset>

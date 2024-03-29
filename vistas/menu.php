@@ -53,7 +53,7 @@ if (isset($_SESSION['usuario'])) {
     <li class="nav-item dropdown">
         
         <a class="btn btn-danger" href="../procesos/funciones/salir.php">
-         SALIR</a>
+         CERRAR SESION</a>
          
       
       

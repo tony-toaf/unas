@@ -14,6 +14,11 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_r
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title>Area de Perios</title>
 			<style>
+				body{
+					background-image: url(../img/peritos.jpg);
+					background-size: cover;
+					/*filter: brightness(0.5);*/
+				}
 				.contenedor{
 					margin-top: 20px;
 					margin-bottom: 100px;
@@ -39,6 +44,15 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_r
 				p{
 					text-align: justify;
 				}
+				#usuario{
+					font-size: 20px;
+					align-self: center;
+					color: red;
+				}
+				.text-informacion{
+					font-size: 30px;
+					color: black;
+				}
 
 			</style>
 		</head>
@@ -49,7 +63,7 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_r
 					<ul class="">	
 						<ul class="mt-2">
 							<li><a href="peritos/opsiones_peritos.php">
-								<h1><?php echo $usuario;?></h1>
+								<h1 id="usuario" class="text-center"><?php echo $usuario;?></h1>
 							</a></li>
 						</ul>
 					</ul>
@@ -81,7 +95,7 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_r
 				<div class="container ">
 					<div class="row">
 						<div class="col text-center">
-							<p class="">
+							<p class="text-informacion">
 								El area de peritaje de la <b>UNIDAD NACIONAL ANTISECUESTRO</b> es la encargada de llevar la administracion de la informacion solicitada a la UIC.
 							</p>
 						</div>	

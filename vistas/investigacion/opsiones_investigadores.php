@@ -26,8 +26,9 @@ if (!isset($_SESSION['usuario'])) {
 
   <style>
     body{
-      background-color: #FFFBFB;
+      background-image: url(../img/investigador.png);
     }
+
     .titulo{
       width: 100%;
       text-align: center;
@@ -106,8 +107,8 @@ if (!isset($_SESSION['usuario'])) {
           <div class="dropdown">
             <button class="dropbtn btn btn-success">VER MIS DATOS</button>
             <div class="dropdown-content">
-              <a href="../../procesos/peritos/Ver_datos/Ver_archivos.php" class="">Ver Mis Archivos</a>
-              <a href="../../procesos/peritos/Ver_datos/listar_casos.php">Listar Casos Asignados</a>
+              <a href="../../procesos/investigadores/Ver_datos/Ver_archivos.php" class="">Ver Archivos de Caso</a>
+              <a href="../../procesos/investigadores/Ver_datos/Listar_casos.php">Listar Casos Asignados</a>
 
 
             </div>
@@ -127,9 +128,8 @@ if (!isset($_SESSION['usuario'])) {
     <div class="dropdown">
       <button class="dropbtn btn btn-info">AGREGAR</button>
       <div class="dropdown-content">
-        <a href="agregar/add_expediente.php">Agregar Expediente</a>
-        <a href="agregar/add_numero.php">Agregar Numero</a>
-        <a href="agregar/add_imei.php">Agregar Imei</a>
+        <a href="Add_caso/Crear_caso.php">Agregar Expediente</a>
+        
       </div>
 
     </th>
@@ -137,21 +137,18 @@ if (!isset($_SESSION['usuario'])) {
       <div class="dropdown">
         <button class="dropbtn btn btn-dark">EDITAR</button>
         <div class="dropdown-content">
-          <a href="Editar/edit_expediente.php">Editar Numero de Expediente</a>
-          <a href="Editar/edit_usuario_encargado.php">Editar Usuario Encargado</a>
-          <a href="Editar/edit_telefono.php">Editar Numero de Telefono</a>
-          <a href="Editar/edit_imei.php">Editar IMEI</a>
+          <a href="Editar/Editar_Expediente.php">Editar Expediente</a>
+         
 
         </div>
       </div>
-    </th>
+    </th> 
     <th>
       <div class="dropdown">
         <button class="dropbtn btn btn-danger">ELIMINAR</button>
         <div class="dropdown-content">
-          <a href="Eliminar/eliminar_numero.php">Eliminar Numero</a>
-          <a href="Eliminar/eliminar_imei.php">Eliminar IMEI</a>
-          <a href="Eliminar/eliminar_expediente.php">Eliminar Expediente</a>
+          <a href="Eliminar/Eliminar_expediente.php">Eliminar Caso</a>
+          
         </div>
       </div>
     </th>
@@ -159,25 +156,10 @@ if (!isset($_SESSION['usuario'])) {
 </thead>
 </table>
 
-<div class= "principal">
-
-  <div class="secundaria">
-    <h1>Buscar Numeros</h1>
-    <p>Introduce el numero sin guiones</p>
-    <hr class="bg-danger col-sm-4s">
-    <form action="" method="post" accept-charset="utf-8">
-      <div class="input-group mbs-3">
-      <input type="text" class="form-control col-sm-12" placeholder="Buscar un numero" name="numero">
-      <div class="input-group-append">
-        <button type="submit" class="btn btn-outline-primary" formaction="../../procesos/peritos/Ver_datos/buscar_numero.php">Buscar</button>
-      </div>
-    </div>
-    </form>
-    </div>
-      
+<div class= "principal">     
 
   <div style="margin-top: 50px;" class="secundaria">
-    <h1>Buscar Por Expediente </h1>
+    <h1>Buscar Expediente </h1>
     <p>Introduce el numero de Expediente</p>
     <hr class="bg-danger col-sm-4s">
     <form  method="post" accept-charset="utf-8">

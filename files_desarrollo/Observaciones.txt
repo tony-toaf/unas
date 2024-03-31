@@ -1,1 +1,11 @@
 configurar el id del usuario como autoincremenetable
+
+//pediente de agregar el responsivo con un condicional para pantallas pequenas (opsiones_peritos)
+
+
+agnadir todo el personal en una tabla para el estatus de ellos mismos
+
+crear una base de datos con las caracteristicas de los vehiculos  
+
+crear tabla para control de abastecimientos
+

@@ -15,16 +15,54 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_r
 	<link rel="stylesheet" href="../librerias/bootstrap.min.css">
 	<link rel="stylesheet" href="../fontawesome.all.css">
 	<title>investigacion</title>
+
+	<style>
+		body{
+			background-image: url(../img/);
+			background-size: cover;
+		}
+		h1{
+			text-align: center;
+
+		}
+		#usuario{
+			color: red;
+			margin:  30px auto;
+			border-radius: 1px solid red;
+			width: 350px;
+
+		}
+		.text-informacion{
+			margin-bottom:40px;
+		}
+
+		p{
+			text-align: justify;
+			font-size: 30px;
+			margin-left: 30px;
+			margin-top: 80px;
+		}
+
+		hr{
+			background-color: red;
+			margin: 10px;
+		}
+		
+	</style>
 </head>
 <body>
-	<?php include "menu.php";?>		
-	<h1 >AREA DE INVESTIGACION</h1>
+	<?php include "menu.php";?>
 
-	<h2>USUARIO ACTIVO</h2>
-	<ol>
-		<li><a href=""><?php echo $usuario;?></a></li>
+	<h1 id="usuario"><a href="investigacion/opsiones_investigadores.php"><?php echo $usuario;?></a></h1>	
+	<h1 >AREA DE INVESTIGACION</h1>
+	<hr>
+	<section class="text-informacion">
+		<p>
+			informacion asobre el area de investigacion
+		</p>	
+	</section>
 		
-	</ol>
+	
 </body>
 </html>
 <?php

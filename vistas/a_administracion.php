@@ -13,19 +13,58 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_r
 	<link rel="stylesheet" href="../librerias/bootstrap.min.css">
 	<link rel="stylesheet" href="../fontawesome.all.css">
 	<title>administracion</title>
+
+	<style>
+		body{
+			/*background-image: url(../img/administracion.jpg);*/
+			background-size: cover	;
+		}
+		#usuario{
+			margin-top: 40px;
+			margin-bottom: 40px;
+			text-align:center;
+			font-size:30px;
+		}
+		hr{
+			width: 90%;
+			background-color: red;
+		}
+		h1{
+			text-align: center;
+		}
+		.text-informacion{
+			font-size: 30px;
+			color: black;
+			margin-top: 40px;
+			margin-left: 30px;
+			text-align: justify;
+		}
+		h1{
+			color: white;
+		}
+	</style>
 </head>
 <body>
-	<?php 
-	include "menu.php";?>	
+	<?php
+	include "menu.php";?>
+	<div id="usuario">
+		<a  href="administracion/opsiones_administradores.php"><?php echo $usuario;?></a>
+		<hr>
+	</div>
+	<h1>AREA <br>DE <br>ADMINISTRACION</h1>
 
-	<h1>AREA DE ADMINISTRACION</h1>
 
-	<h2>USUARIO ACTIVO</h2>
-	<ol>
-		<li><a href="administracion/opsiones_administradores.php"><?php echo $usuario;?></a></li>
+	<section class="text-informacion">
+		<p>
+			agregar informacion del area de  administracion
+		</p>
+		
+	</section>
+
+	
+		
 		
 
-	</ol>
 	
 </body>
 </html>

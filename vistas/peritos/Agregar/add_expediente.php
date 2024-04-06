@@ -16,8 +16,9 @@
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <!------ Include the above in your HEAD tag ---------->
 
-  <!-- en la siguiente linea se crea el metodo a utilizar para detonar el proceso -->
-  <form class="form-horizontal" method="post">
+  <!-- en la siguiente linea se crea el metodo a utiliza
+    r para detonar el proceso -->
+  <form class="form-horizontal" method="post" action="../../../procesos/peritos/Agregar/add_Expediente.php">
     <fieldset>
 
       <!-- Form Name -->

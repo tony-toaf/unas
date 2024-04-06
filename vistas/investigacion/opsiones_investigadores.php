@@ -128,7 +128,7 @@ if (!isset($_SESSION['usuario'])) {
     <div class="dropdown">
       <button class="dropbtn btn btn-info">AGREGAR</button>
       <div class="dropdown-content">
-        <a href="Add_caso/Crear_caso.php">Agregar Expediente</a>
+        <a href="Add_caso/Crear_Caso.php">Agregar Expediente</a>
         
       </div>
 
@@ -137,7 +137,7 @@ if (!isset($_SESSION['usuario'])) {
       <div class="dropdown">
         <button class="dropbtn btn btn-dark">EDITAR</button>
         <div class="dropdown-content">
-          <a href="Editar/Editar_Expediente.php">Editar Expediente</a>
+          <a href="Editar/Editar_expediente.php">Editar Expediente</a>
          
 
         </div>

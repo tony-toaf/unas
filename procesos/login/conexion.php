@@ -26,7 +26,7 @@ try {
 
         header("Location: verificando_usuario.php");
     } else {
-        echo "No se inició sesión";
+        header("Location: ../funciones/Sesion_no_iniciada.php");
     }
 
 } catch (Exception $e) {

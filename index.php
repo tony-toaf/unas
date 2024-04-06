@@ -11,6 +11,7 @@
 
 
 	<style>
+		
 		body {
 
 			background-image: url('img/img.jpg'); /* Ruta a tu imagen de fondo */

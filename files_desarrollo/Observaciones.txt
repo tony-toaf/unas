@@ -9,3 +9,8 @@ crear una base de datos con las caracteristicas de los vehiculos
 
 crear tabla para control de abastecimientos
 
+3 modificar las vistas para cuando se insertan datos, archivos agregar usuario
+4pendiente crear carpeta de usuario cuando se crea el usuario
+
+
+    

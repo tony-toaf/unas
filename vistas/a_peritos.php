@@ -15,7 +15,7 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['id_rol']) && $_SESSION['id_r
 			<title>Area de Perios</title>
 			<style>
 				body{
-					background-image: url(../img/peritos.jpg);
+					background-image: url(.../img/peritos.jpg);
 					background-size: cover;
 					/*filter: brightness(0.5);*/
 				}

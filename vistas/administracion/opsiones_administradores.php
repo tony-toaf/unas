@@ -125,8 +125,7 @@ if (!isset($_SESSION['usuario'])) {
     <div class="dropdown">
       <button class="dropbtn btn btn-info">ORDENES DE CAPTURA</button>
       <div class="dropdown-content">
-        <a href="Ordenes_captura/Buscar_orden.php">Buscar Una Orden</a>
-        <a href="Ordenes_captura/add_ordenes.php">Agregar Nueva Orden</a>
+        <a href="Ordenes_captura/Add_ordenes.php">Agregar Nueva Orden</a>
         <a href="../../procesos/administradores/Administrar_ordenes/Odenes_pendientes.php">Ordenes  Pendientes</a>
         <a href="../../procesos/administradores/Administrar_ordenes/Ordenes_ejecutadas.php">Ordenes Ejecutadas</a> 
         <a href="../../procesos/administradores/Administrar_ordenes/Ordenes_descartadas.php">Ordenes Descartadas</a>
@@ -161,17 +160,17 @@ if (!isset($_SESSION['usuario'])) {
 </thead>
 </table>
 
-<div class= "principal">
 
+<div class= "principal">
   <div style="margin-top: 50px;" class="secundaria">
     <h1>Buscar Informacion de Orden de Captura </h1>
     <p>Introduce la informacion a buscar</p>
     <hr class="bg-danger col-sm-4s">
-    <form  method="post" accept-charset="utf-8">
+    <form  method="post" action="../../procesos/administradores//Administrar_ordenes/Buscar_orden.php" accept-charset="utf-8">
       <div class="input-group mbs-3">
-        <input type="text" class="form-control col-sm-12" placeholder="Introduce el nombre o la identidad a buscar" name="expediente">
+        <input type="text" class="form-control col-sm-12" placeholder="Introduce el nombre o la identidad a buscar" name="Dato">
         <div class="input-group-append">
-          <button type="submit" class="btn btn-outline-primary" name="buscar" formaction="../../procesos/peritos/Ver_datos/buscar_expediente.php">Buscar</button>
+          <input type="submit"  class="btn btn-outline-primary"  name="" value="Buscar orden">
         </div>
       </div>
     </div>
